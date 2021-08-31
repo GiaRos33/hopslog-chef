@@ -17,6 +17,7 @@ end
 
 group node['hopslog']['group'] do
   action :modify
+  gid node['elastic']['gid']
   members ["#{node['hopslog']['user']}"]
   append true
   not_if { node['install']['external_users'].casecmp("true") == 0 }
