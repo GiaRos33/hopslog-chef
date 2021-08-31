@@ -7,6 +7,7 @@ end
 
 user node['hopslog']['user'] do
   action :create
+  uid node['elastic']['uid']
   gid node['hopslog']['group']
   system true
   shell "/bin/bash"
@@ -44,6 +45,7 @@ user node['hops']['yarn']['user'] do
   shell "/bin/bash"
   manage_home true
   action :create
+  uid node['yarn']['uid']
   not_if "getent passwd #{node['hops']['yarn']['user']}"
   not_if { node['install']['external_users'].casecmp("true") == 0 }
 end
