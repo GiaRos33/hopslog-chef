@@ -40,7 +40,9 @@ default['kibana']['home']                       = node['hopslog']['dir'] + "/kib
 default['kibana']['base_dir']                   = node['hopslog']['dir'] + "/kibana"
 default['kibana']['log_dir']                    = node['kibana']['base_dir'] + "/log"
 default['kibana']['pid_file']                   = "/tmp/kibana.pid"
-
+#
+#YARN
+default['yarn']['uid']                          = "10150"
 #
 # Filebeat
 
